@@ -9,11 +9,24 @@ const Entry = () => {
     useEffect(() => {
         axios.get(url).then((response) =>
         setSongs(response.data))
+
+
     }, []);
+
+
+const getAllSongs = async () => {
+    try {
+        const response = await axios(url);
+        console.log(response.data);
+    } catch (error) {
+        console.log(error.response)
+    }
+
+};
 
     return ( 
         <div>
-        {/* <button onClick={() => getAllSongs()}>Get All Songs</button> */}
+        <button onClick={() => getAllSongs()}>Get All Songs</button>
 
         {songs.map((song) => {
           return <div>

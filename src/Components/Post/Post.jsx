@@ -1,45 +1,40 @@
 import { useState } from "react";
 import axios from 'axios';
 
-const Post = (props) => {
+const Post = () => {
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [release_date, setRelease_date] = useState('');
     const [genre, setGenre] = useState('');
-    //const [post, setPost] = useState([]);
-    // const [likes, setLike] = useState('');
+
     const url = 'http://127.0.0.1:8000/music/';
 
     const handleSubmit = (event) => {
         event.preventDefault();
         addPost();
     };
-
-
     
-
-    const addPost = (title, artist, album, release_date, genre) => {
-        let postresponse = axios.post(url, {
-            album: album,
-            artist: artist,
-            genre: genre,
-            release_date: release_date,
+   function addPost (){
+    try {
+        const response =  axios.post(url, {
             title: title,
+            artist: artist,
+            album: album,
+            release_date: release_date,
+            genre: genre
         });
-        console.log(postresponse);
-        // props.addNewpost(postresponse)
-        // setPost([postresponse.data, ...post]);
-        // setTitle('');
-        // setArtist('');
-        // setAlbum('');
-        // setRelease_date('');
-        // setGenre('');
+        console.log(response);
+    } catch (error) {
+        console.log('try again')
+    }};
 
-    }
+
+
 
 
     return ( 
+
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Title</label>
