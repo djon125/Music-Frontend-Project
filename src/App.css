@@ -1,0 +1,87 @@
+ul {
+    list-style: none;
+    border-style: solid;
+    border-color: #918f8f;
+    border-radius: 11px;
+    background-color: white;
+    margin-left: 75px;
+    margin-right: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: flex-end;
+}
+
+
+.poster {
+    display: flex;
+    flex-direction: right;
+    margin-bottom: 20px;
+}
+
+.update_delete {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.update{
+margin-right: 5px;
+}
+
+.delete{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.title {
+    margin-right: 10px;
+}
+.artist {
+    margin-right: 10px;
+}
+.album {
+    margin-right: 10px;
+}
+.release_date {
+    margin-right: 10px;
+}
+.genre {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.l_title {
+    margin-right: 10px;
+}
+.l_artist {
+    margin-right: 10px;
+}
+.l_album {
+    margin-right: 10px;
+}
+.l_release_date {
+    margin-right: 10px;
+}
+.l_genre {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.l_button {
+    margin-left: 10px;
+}
+
+li {
+    margin: 10px
+}
+
+input {
+    border-style: solid;
+    border-color: #918f8f;
+    border-radius: 2px;
+}
+.delete_button{
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}

@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react';
 // import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import './App.css';
 import Entry from './Components/Entry/Entry';
 import Post from './Components/Post/Post';
+import "./App.css";
+
 function App() {
-
-  // const [post, setPost] = useState([]);
+  
+  
+  // const [posts, setPosts] = useState([])
+ 
   // function addNewPost(post) {
-  //   let tempPost = [...post, post];
-
-  //   setPost(tempPost);
+  //   let tempPost = [...posts, post];
+  //   setPosts(tempPost);
   // }
-
 
   return (
 <div>
   <h1>music Frontend</h1>
-  {/* <DisplayMusic /> */}
   <Post />
   <Entry />
 </div>
