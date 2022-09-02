@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from 'axios';
-// import * from "../Entry";
+import showAllSongs from "../DisplayMusic/DisplayMusic"
 
-const Post = () => {
+const Post = (props) => {
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
@@ -13,10 +13,13 @@ const Post = () => {
 
     const handleSubmit = (event) => {
         //so page re-renders
-        //event.preventDefault();
+        event.preventDefault();
         addPost();
+        // props.showAllSongs();
     };
     
+
+
    async function addPost (){
     try {
         const response =  await axios.post(url, {
@@ -29,7 +32,10 @@ const Post = () => {
         console.log(response.data);
     } catch (error) {
         console.log('try again')
-    }};
+    } finally {
+        showAllSongs();
+    }
+};
 
 
 
@@ -57,7 +63,7 @@ const Post = () => {
             <div className="genre">
                 <label className="l_genre">Genre</label>
                 <input type="text" value={genre} onChange={(event) => setGenre(event.target.value)}/>
-                <button className="l_button" type='submit'>Create Song</button>
+                <button className="l_button" type=''>Create Song</button>
             </div>
 
         </form>

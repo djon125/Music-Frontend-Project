@@ -1,9 +1,10 @@
 // import React, { useState } from 'react';
 // import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import './App.css';
-import Entry from './Components/Entry/Entry';
+import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import Post from './Components/Post/Post';
 import "./App.css";
+
 
 function App() {
   
@@ -19,7 +20,7 @@ function App() {
 <div>
   <h1>music Frontend</h1>
   <Post />
-  <Entry />
+  <DisplayMusic />
 </div>
   );
 }

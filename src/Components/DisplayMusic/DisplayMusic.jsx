@@ -1,49 +1,65 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import Delete from "../Delete/Delete";
 
+const DisplayMusic = (props) => {
 
-// const DisplayMusic = (props) => {
-   
-//     const [songs, setSongs] =useState([]);
+    const [songs, setSongs] = useState([]);
+    const url = 'http://127.0.0.1:8000/music/';
 
-//     useEffect(() => {
-//         getAllSongs();
-//     }, []);
+    useEffect(() => {
+      showAllSongs();
+      
+    }, []);
     
-    
-//     async function getAllSongs(){
-//       const songresponse = await axios.get('http://127.0.0.1:8000/music/');
-//       console.log(songresponse.data);
-//       setSongs(songresponse.data)
+     function showAllSongs() {
+      axios.get(url).then((response) =>
+      setSongs(response.data))
+      
+    };
 
-//     }
-   
-   
-//     return ( 
-//         <div>
-//         <button onClick={() => getAllSongs()}>Get All Songs</button>
 
-//         {songs.map((song) => {
-//           return <div>
-//             <ul>
-//               <li>{song.title}</li>
-//               <li>{song.artist}</li>
-//               <li>{song.album}</li>
-//               <li>{song.release_date}</li>
-//               <li>{song.genre}</li>
-//               <li>{song.likes}</li>
-//             </ul>
+
+
+async function getAllSongs() {
+    try {
+        const response = await axios.get(url);
+        console.log(response.data);
+    } catch (error) {
+        console.log(error.response)
+    }
+
+};
+
+    return ( 
+        <div>
+        <button onClick={() => getAllSongs()}>Get All Songs</button>
+        <button onClick={() => showAllSongs()}>Show All Songs</button>
+        <form className="update_delete">
+          <div>
+            <label className="update">Update</label>
+            <input />
+            <label className="delete">Delete</label>
+            <input />
+          </div>
+        </form>
         
-//           </div>
-//         })}
-//       </div>
-
-
-//      );
-//     }
+        <button>Update</button><button>Delete</button>
+        {songs.map((song) => {
+          return <div>
+            <ul key={song.id}>
+              <li>{song.title}</li>
+              <li>{song.artist}</li>
+              <li>{song.album}</li>
+              <li>{song.release_date}</li>
+              <li>{song.genre}</li>
+              <li>{song.likes}</li><Delete id={song.id} showAllSongs={showAllSongs}/>
+            </ul>
+        
+          </div>
+        })}
+      </div>
+     );
+}
  
-// export default DisplayMusic;
-
-
-
-
+export default DisplayMusic;
