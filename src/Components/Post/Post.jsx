@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from 'axios';
-import showAllSongs from "../DisplayMusic/DisplayMusic"
+
 
 const Post = (props) => {
     const [title, setTitle] = useState('');
@@ -15,7 +15,7 @@ const Post = (props) => {
         //so page re-renders
         event.preventDefault();
         addPost();
-        // props.showAllSongs();
+        props.showAllSongs();
     };
     
 
@@ -32,8 +32,6 @@ const Post = (props) => {
         console.log(response.data);
     } catch (error) {
         console.log('try again')
-    } finally {
-        showAllSongs();
     }
 };
 
