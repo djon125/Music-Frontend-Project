@@ -12,24 +12,30 @@ const Post = (props) => {
     const url = 'http://127.0.0.1:8000/music/';
 
     const handleSubmit = (event) => {
-        //so page re-renders
         event.preventDefault();
-        addPost();
-        props.showAllSongs();
-    };
-    
-
-
-   async function addPost (){
-    try {
-        const response =  await axios.post(url, {
+        const newPost = {
             title: title,
             artist: artist,
             album: album,
             release_date: release_date,
             genre: genre
-        });
+        };
+        addPost(newPost);
+    };
+    
+
+
+    // async function addPost (newPost){
+    //     const response = await axios.post(url, newPost);
+    //     console.log(response.data);
+    //     props.showAllSongs();
+    // };
+
+   async function addPost (newPost){
+    try {
+        const response =  await axios.post(url, newPost);
         console.log(response.data);
+        props.showAllSongs();
     } catch (error) {
         console.log('try again')
     }

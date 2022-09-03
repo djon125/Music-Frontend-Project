@@ -1,25 +1,24 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+// import axios from "axios";
 import Delete from "../Delete/Delete";
 
 const DisplayMusic = (props) => {
-
-  const url = "http://127.0.0.1:8000/music/";
 
   useEffect(() => {
     props.showAllSongs();
   }, []);
 
 
-
-  async function getAllSongs() {
-    try {
-      const response = await axios.get(url);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.response);
-    }
-  }
+// showing a try catch
+  // async function getAllSongs() {
+  //   try {
+  //     const response = await axios.get(url);
+  //     props.setSongs(response.data);
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error.response);
+  //   }
+  // }
 
   return (
     // <ul>
@@ -27,7 +26,6 @@ const DisplayMusic = (props) => {
     // </ul>
 
     <div>
-      <button onClick={() => getAllSongs()}>Get All Songs</button>
       <button onClick={() => props.showAllSongs()}>Show All Songs</button>
       <form className="update_delete">
         <div>
@@ -38,8 +36,7 @@ const DisplayMusic = (props) => {
         </div>
       </form>
 
-      <button>Update</button>
-      <button>Delete</button>
+
       {props.songs.map((song) => {
         return (
           <div>
