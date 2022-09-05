@@ -21,8 +21,9 @@ function App() {
 
   return (
 <div>
-  <h1>music Frontend</h1>
-  <SearchBar songs={songs} setSongs={setSongs}/>
+  <h1>Music Frontend</h1>
+  <SearchBar songs={songs} setSongs={setSongs}/><button className="b1"onClick={showAllSongs}>Show All Songs</button>
+  
   <Post showAllSongs={showAllSongs}/>
   <DisplayMusic songs={songs} showAllSongs={showAllSongs} setSongs={setSongs}/>
 </div>

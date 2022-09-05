@@ -26,17 +26,6 @@ const DisplayMusic = (props) => {
     // </ul>
 
     <div>
-      <button onClick={() => props.showAllSongs()}>Show All Songs</button>
-      <form className="update_delete">
-        <div>
-          <label className="update">Update</label>
-          <input />
-          <label className="delete">Delete</label>
-          <input />
-        </div>
-      </form>
-
-
       {props.songs.map((song) => {
         return (
           <div>

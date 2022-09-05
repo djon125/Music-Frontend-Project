@@ -7,11 +7,11 @@ const SearchBar = (props) => {
     function searchSongs(event){
         event.preventDefault();
         const response = props.songs.filter((song) => {
-           if(song.title.includes(searchTerm) ||
-             song.artist.includes(searchTerm) ||
-             song.album.includes(searchTerm) ||
+           if(song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             song.album.toLowerCase().includes(searchTerm.toLowerCase()) ||
              song.release_date.includes(searchTerm) ||
-             song.genre.includes(searchTerm)) {
+             song.genre.toLowerCase().includes(searchTerm.toLowerCase())) {
                 return true;
              } else{
                 return false;
@@ -21,10 +21,14 @@ const SearchBar = (props) => {
     }
 
     return ( 
+        <div>
         <form onSubmit={searchSongs}>
             <input placeholder='Search Movies' type='text' value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
-            <button type='submit'>Search</button>
+            <button type='submit'>Search Library</button>
         </form>
+
+
+        </div>
      );
 }
  

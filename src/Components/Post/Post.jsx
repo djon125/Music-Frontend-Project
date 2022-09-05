@@ -67,7 +67,7 @@ const Post = (props) => {
             <div className="genre">
                 <label className="l_genre">Genre</label>
                 <input type="text" value={genre} onChange={(event) => setGenre(event.target.value)}/>
-                <button className="l_button" type=''>Create Song</button>
+                <button className="l_button" >Create Song</button>
             </div>
 
         </form>
