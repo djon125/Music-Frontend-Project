@@ -14,7 +14,7 @@ const Delete = (props) => {
 
 
     return ( 
-        <button onClick={deleteSong}>Delete Song</button>
+        <button className="del" onClick={deleteSong}>Delete Song</button>
      );
 }
  

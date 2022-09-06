@@ -14,6 +14,7 @@ ul {
 }
 
 
+
 .poster {
     display: flex;
     flex-direction: right;
@@ -103,3 +104,4 @@ b1{
 b2{
     margin-left: 5px;
 }
+
